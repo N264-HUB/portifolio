@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Wen Creatives for professional web design, development and digital marketing services in Kenya. Get in touch for a free consultation.">
+    <meta name="keywords" content="contact, web design kenya, web development, digital marketing, nairobi web design, kenya web developer">
+    <meta name="author" content="Wen Creatives">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Contact Wen Creatives - Web Design & Development Services Kenya">
+    <meta property="og:description" content="Get in touch with Wen Creatives for professional web design, development and digital marketing services in Kenya.">
+    <meta property="og:image" content="Wen Creatives o Background copy.png">
+    <meta property="og:url" content="https://wencreatives.com/contact">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Contact Nicky Creatives - Professional Web Design & Development Services Kenya</title>
+    <link rel="canonical" href="https://wencreatives.com/contact">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 20px 5%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .nav-menu li {
+            display: inline;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ff004f;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        #contact {
+            min-height: 100vh;
+            padding: 120px 5% 50px;
+            text-align: center;
+            background: linear-gradient(to bottom, #0a0a0a, #111);
+        }
+
+        #contact h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #ff004f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 8s ease infinite;
+        }
+
+        #contact p {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            flex: 1 1 400px;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255,0,79,0.2);
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            color: #ff004f;
+            margin-bottom: 20px;
+        }
+
+        form .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #ff004f;
+            box-shadow: 0 0 10px rgba(255,0,79,0.3);
+            outline: none;
+        }
+
+        form button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff004f, #e60043);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,0,79,0.4);
+        }
+
+        .phone-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.3rem;
+            color: #fff;
+            text-decoration: none;
+            background: linear-gradient(45deg, #ff004f, #e60043);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .phone-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,0,79,0.4);
+        }
+
+        .social-media {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-icon, .tiktok-icon {
+            color: #fff;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-icon:hover, .tiktok-icon:hover {
+            background: #ff004f;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255,0,79,0.3);
+        }
+
+        footer {
+            padding: 30px;
+            background: rgba(17,17,17,0.98);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            #contact h1 {
+                font-size: 3rem;
+            }
+            
+            #contact h2 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-section {
+                flex: 1 1 100%;
+                margin: 0 20px;
+            }
+            
+            .nav-menu {
+                gap: 20px;
+            }
+            
+            .nav-menu a {
+                font-size: 16px;
+            }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html" title="Home">Home</a></li>
+                <li><a href="about.html" title="About Us">About</a></li>
+                <li><a href="portfolio.html" title="Our Portfolio">Portfolio</a></li>
+                <li><a href="#contact" title="Contact Us">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact" aria-label="Contact section">
+            <h1>Contact Nicky Creatives</h1>
+            <p>Let's create something amazing together - Web Design & Development experts in Kenya</p>
+
+            <div class="contact-sections">
+                <div class="contact-section">
+                    <h2>Talk to Us</h2>
+                    <p>Ready to discuss your project? Reach out directly!</p>
+                    <a href="tel:+254715537057" class="phone-link" aria-label="Call us">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i> +254 7O6 327 259
+                    </a>
+                </div>
+
+                <div class="contact-section">
+                    <h2>Send a Message</h2>
+                    <form class="form-1" id="form-1" onclick="return validateJoinUs()" action="https://api.web3forms.com/submit" method="POST" aria-label="Registration form">
+                        <div class="inputContainer">
+                            <input type="hidden" name="access_key" value="88c246c8-d915-4d07-b770-232cdd67508d">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..." aria-required="true"></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="social-media" aria-label="Social media links">
+                <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Facebook page">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.twitter.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Twitter page">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our YouTube channel">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Instagram page">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.tiktok.com/@wencreatives?_t=ZM-8tI0U1FW1e2&_r=1" class="tiktok-icon" target="_blank" rel="noopener" aria-label="Visit our TikTok page">
+                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nicky Creatives. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            const encodedMessage = encodeURIComponent(message);
+            const mailtoLink = `mailto:nnic5364@gmail.com?subject=Contact Form Submission&body=Email: ${email}%0A%0AMessage: ${encodedMessage}`;
+            window.location.href = mailtoLink;
+
+            document.getElementById('contactForm').reset();
+            alert('Thank you! Your message has been sent.');
+        });
+    </script>
+</body>
+</html>
+
+
+
+

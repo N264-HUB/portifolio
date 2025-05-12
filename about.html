@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Wen Creatives - A professional web design and development agency in Kenya. Specializing in creating exceptional digital experiences through web design, graphic design and app development.">
+    <meta name="keywords" content="web design kenya, web developer nairobi, graphic design, app development, digital agency kenya, web design company nairobi">
+    <meta name="author" content="Wen Creatives">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="About Wen Creatives - Professional Web Design & Development Agency Kenya">
+    <meta property="og:description" content="Professional web design and development agency creating exceptional digital experiences in Kenya. Learn about our expertise in web design, graphic design and app development.">
+    <meta property="og:image" content="about profile.png">
+    <meta property="og:url" content="https://wencreatives.com/about">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>About Nicky Creatives - Professional Web Design & Development Agency Kenya</title>
+    <link rel="canonical" href="https://wencreatives.com/about">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 30px 10%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .nav-menu li {
+            display: inline;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            left: 0;
+            bottom: -8px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        #about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 150px 10%;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.9), rgba(10,10,10,1));
+        }
+
+        #about h2 {
+            font-size: 4.5rem;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #fff, #ff004f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 8s ease infinite;
+        }
+
+        #about p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 2;
+            max-width: 900px;
+            margin: 25px auto;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 70px;
+            margin: 60px 0;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .profile img {
+            width: 300px;
+            height: 300px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(255,0,79,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.08);
+        }
+
+        .social-media {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+        }
+
+        .social-icon, .tiktok-icon {
+            color: #fff;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-icon:hover, .tiktok-icon:hover {
+            background: #ff004f;
+            color: #fff;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255,0,79,0.3);
+        }
+
+        footer {
+            background: rgba(17, 17, 17, 0.98);
+            text-align: center;
+            padding: 40px 0;
+            color: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            #about h2 {
+                font-size: 3rem;
+            }
+
+            .profile {
+                padding: 20px;
+            }
+
+            .profile img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .nav-menu {
+                gap: 30px;
+            }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html" title="Home">Home</a></li>
+                <li><a href="about.html" title="About Us">About</a></li>
+                <li><a href="portfolio.html" title="Our Portfolio">Portfolio</a></li>
+                <li><a href="contact.html" title="Contact Us">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" aria-label="About section">
+            <h1>About Nicky Creatives</h1>
+            <div class="profile">
+                <img src="about profile.jpg" alt="Wen Creatives - Professional Web Design Agency in Kenya" width="300" height="300">
+                <p>Hi! I'm <strong>Nicky Creatives</strong>, a passionate digital craftsman dedicated to creating exceptional web experiences in Kenya. I specialize in designing websites and crafting digital experiences that not only look stunning but also deliver results. My approach combines creativity with functionality to build solutions that make a lasting impact.</p>
+            </div>
+            <p>With extensive experience in web design, graphic design, and app development, I bring a comprehensive skill set to every project. I believe in pushing boundaries and exploring innovative solutions to help businesses thrive in the digital world. Let's collaborate and turn your vision into reality!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nicky Creatives. All Rights Reserved.</p>
+        <div class="social-media" aria-label="Social media links">
+            <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.twitter.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Twitter page"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Instagram page"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.tiktok.com/@wencreatives?_t=ZM-8tI0U1FW1e2&_r=1" class="tiktok-icon" target="_blank" rel="noopener" aria-label="Visit our TikTok page">
+                <i class="fab fa-tiktok" aria-hidden="true"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+

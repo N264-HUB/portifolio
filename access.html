@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .dashboard {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .courses {
+            margin-top: 20px;
+        }
+        .course {
+            background: #e3f2fd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .course img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        .progress-bar {
+            height: 10px;
+            background: #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background: #4caf50;
+            width: 0%;
+        }
+        .start-button {
+            background: #0288d1;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+            width: 80%;
+            max-width: 640px;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="profile">
+            <img src="Download Coding neon icon for free.jpeg" alt="User Profile">
+            <h2 id="username">Zizo</h2>
+            <p>Hello, welcome to our WordPress class! 🚀🎉</p>
+        </div>
+        <h3>My Courses</h3>
+        <div class="courses" id="coursesList"></div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="videoFrame" width="100%" height="360" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+         const courses = [
+            { name: "Introduction & Demo Website Tour", description: "Get a sneak peek at the website we'll build from scratch using WordPress.", video: "YOUR_VIDEO_ID1", image: "https://via.placeholder.com/150" },
+            { name: "Best & Fastest Hosting", description: "Learn how to select the fastest and most reliable hosting for your WordPress website.", video: "YOUR_VIDEO_ID2", image: "https://via.placeholder.com/150" },
+            { name: "Installing WordPress", description: "A simple guide to installing WordPress on your hosting account.", video: "YOUR_VIDEO_ID3", image: "https://via.placeholder.com/150" },
+            { name: "Basic WordPress Settings", description: "Configure your WordPress settings correctly to optimize performance.", video: "YOUR_VIDEO_ID4", image: "https://via.placeholder.com/150" },
+            { name: "GoDaddy to Hostinger Migration", description: "A step-by-step guide on transferring your domain and hosting.", video: "YOUR_VIDEO_ID5", image: "https://via.placeholder.com/150" },
+            { name: "Installing Theme & Plugins", description: "Install a professional theme and essential plugins.", video: "B1DuQZczSUI", image: "Installing-WooCommerce-from-within-WordPress.webp" },
+            { name: "WooCommerce Setup", description: "Turn your WordPress site into an eCommerce store with WooCommerce.", video: "YOUR_VIDEO_ID7", image: "https://via.placeholder.com/150" },
+            { name: "Setting Up Shipping Zones & Delivery Charges", description: "Set up shipping zones, delivery rates, and rules.", video: "YOUR_VIDEO_ID8", image: "https://via.placeholder.com/150" },
+            { name: "Integrating Payment Gateways", description: "Learn how to integrate payment methods like M-Pesa, PayPal, and credit cards.", video: "YOUR_VIDEO_ID9", image: "https://via.placeholder.com/150" },
+            { name: "Adding a Location Picker at Checkout", description: "Make deliveries easier by allowing customers to pick their location.", video: "YOUR_VIDEO_ID10", image: "https://via.placeholder.com/150" },
+            { name: "Creating a Google Maps API Key", description: "Learn how to generate a Google Maps API key and integrate it.", video: "YOUR_VIDEO_ID11", image: "https://via.placeholder.com/150" },
+            { name: "Adding Products & Grocery Listings", description: "Learn how to create and manage grocery listings.", video: "YOUR_VIDEO_ID12", image: "https://via.placeholder.com/150" },
+            { name: "Creating Product Variations for Weight & Pack Sizes", description: "Set up product variations like different weights and pack sizes.", video: "YOUR_VIDEO_ID13", image: "https://via.placeholder.com/150" },
+            { name: "Placing an Order as a Customer", description: "Walk through the customer’s experience by placing an order.", video: "YOUR_VIDEO_ID14", image: "https://via.placeholder.com/150" },
+            { name: "Designing the Home Page", description: "Create a visually appealing and functional homepage without coding.", video: "YOUR_VIDEO_ID15", image: "https://via.placeholder.com/150" },
+            { name: "Building Essential Pages – Track Order, About & Contact", description: "Learn how to design must-have pages.", video: "YOUR_VIDEO_ID16", image: "https://via.placeholder.com/150" },
+            { name: "Creating Menus, Footer & Sidebar Widgets", description: "Organize your website’s layout with menus, footers, and sidebars.", video: "YOUR_VIDEO_ID17", image: "https://via.placeholder.com/150" },
+            { name: "Final Website Customization", description: "Apply final design tweaks and optimize performance.", video: "YOUR_VIDEO_ID18", image: "https://via.placeholder.com/150" },
+            { name: "Adding a Delivery Driver Feature", description: "Learn how to add a delivery driver feature for tracking orders.", video: "YOUR_VIDEO_ID19", image: "https://via.placeholder.com/150" },
+            { name: "Order Management & Grocery Delivery", description: "Handle customer orders, process deliveries, and manage your store.", video: "YOUR_VIDEO_ID20", image: "https://via.placeholder.com/150" }
+        ];
+
+
+        const coursesList = document.getElementById("coursesList");
+        const videoModal = document.getElementById("videoModal");
+        const videoFrame = document.getElementById("videoFrame");
+        let player;
+
+        // Render courses
+        courses.forEach(course => {
+            const progress = localStorage.getItem(course.video) || 0;
+            const courseItem = document.createElement("div");
+            courseItem.classList.add("course");
+            courseItem.innerHTML = `
+                <img src="${course.image}" alt="${course.name} Cover Image">
+                <h4>${course.name}</h4>
+                <p>${course.description}</p>
+                <div class="progress-bar"><div class="progress" style="width: ${progress}%;"></div></div>
+                <button class="start-button" onclick="startCourse('${course.video}')">Start Course</button>
+            `;
+            coursesList.appendChild(courseItem);
+        });
+
+        // Open video modal and load YouTube video
+        function startCourse(videoId) {
+            const progress = localStorage.getItem(videoId) || 0;
+            videoFrame.src = `https://www.youtube.com/embed/${videoId}?controls=0&modestbranding=1&rel=0&disablekb=1&start=${Math.floor(progress)}`;
+            videoModal.style.display = "flex";
+
+            // Initialize YouTube Player API
+            player = new YT.Player('videoFrame', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // Close video modal
+        function closeModal() {
+            videoModal.style.display = "none";
+            videoFrame.src = "";
+            if (player) player.destroy();
+        }
+
+        // YouTube Player API: When player is ready
+        function onPlayerReady(event) {
+            const videoId = event.target.getVideoData().video_id;
+            const progress = localStorage.getItem(videoId) || 0;
+            event.target.seekTo(progress); // Resume from last watched position
+        }
+
+        // YouTube Player API: Track video progress
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                setInterval(() => {
+                    const videoId = event.target.getVideoData().video_id;
+                    const currentTime = event.target.getCurrentTime();
+                    const duration = event.target.getDuration();
+                    const progress = (currentTime / duration) * 100;
+
+                    // Update progress bar
+                    const progressBar = document.querySelector(`.progress-bar .progress`);
+                    if (progressBar) progressBar.style.width = `${progress}%`;
+
+                    // Save progress to localStorage
+                    localStorage.setItem(videoId, progress);
+                }, 1000);
+            }
+        }
+
+        // Load YouTube IFrame API
+        function onYouTubeIframeAPIReady() {}
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

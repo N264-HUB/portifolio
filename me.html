@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wen Creatives - Professional web design, development and digital marketing services. We create stunning websites, mobile apps and brand identities tailored to your business needs.">
+    <meta name="keywords" content="web design, web development, app development, graphic design, brand identity, digital marketing, Kenya">
+    <meta name="author" content="Wen Creatives">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Wen Creatives - Web Design & Development Services">
+    <meta property="og:description" content="Professional web design, development and digital marketing services. We create stunning websites, mobile apps and brand identities.">
+    <meta property="og:image" content="Wen Creatives o Background copy.png">
+    <meta property="og:url" content="https://wencreatives.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Wen Creatives - Professional Web Design & Development Services | Kenya</title>
+
+    <!-- Favicons for Apple devices -->
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="apple-touch-icon" href="apple-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="apple-icon.png">
+
+    <!-- Android icons -->
+    <link rel="icon" type="image/png" sizes="36x36" href="android-icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+
+    <!-- Favicon for browsers -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96.png" href="favicon-96x96.png">
+    <link rel="icon" href="apple-icon-180x180.png" type="image/x-icon">
+
+    <!-- Web manifest and browser config -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-config" content="browserconfig.xml">
+
+    <link rel="canonical" href="https://wencreatives.com">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff004f;
+            --secondary-color: #e60043;
+            --dark-bg: #0a0a0a;
+            --text-light: rgba(255,255,255,0.9);
+            --spacing-sm: 10px;
+            --spacing-md: 20px;
+            --spacing-lg: 40px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        #header {
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--bg-image, url('luca-bravo-9l_326FISzk-unsplash.jpg'));
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: var(--spacing-md) 5%;
+            position: relative;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: var(--spacing-md) 5%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: padding 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            width: 140px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .nav-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: clamp(14px, 1.5vw, 16px);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu li a:hover {
+            background: rgba(255,255,255,0.1);
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+            z-index: 1001;
+        }
+
+        .header-text {
+            text-align: center;
+            margin-top: 15vh;
+            padding: var(--spacing-md);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header-text h1 {
+            font-size: clamp(1.8rem, 4vw, 3.5rem);
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(45deg, #fff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .header-text p {
+            font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-light);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .join-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 30px);
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+            font-weight: 600;
+            margin: var(--spacing-sm);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(255, 0, 79, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 5px 20px rgba(255, 0, 79, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(255, 0, 79, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 20px rgba(255, 0, 79, 0.4);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            padding: clamp(8px, 1.2vw, 12px) clamp(16px, 2.5vw, 25px);
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: clamp(0.8rem, 1vw, 1rem);
+            font-weight: 600;
+            margin: var(--spacing-sm);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(255, 0, 79, 0.4);
+        }
+
+        .cta-button:hover, .join-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 79, 0.5);
+        }
+
+        .newsletter {
+            width: 90%;
+            max-width: 400px;
+            margin: var(--spacing-lg) auto;
+            padding: var(--spacing-md);
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .newsletter h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: #fff;
+        }
+
+        .newsletter form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .newsletter input {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .newsletter button {
+            width: 50%;
+            margin: 0 auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: var(--primary-color);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .newsletter button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        #services {
+            padding: var(--spacing-lg) 5%;
+            background: #111;
+        }
+
+        #services h2 {
+            font-size: clamp(1.8rem, 4vw, 3.5rem);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+            background: linear-gradient(45deg, #fff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-list > div {
+            background: rgba(255,255,255,0.05);
+            padding: var(--spacing-md);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .services-list > div:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-image {
+            border-radius: 10px;
+            margin-bottom: var(--spacing-md);
+            height: 180px;
+            object-fit: cover;
+        }
+
+        footer {
+            background: #080808;
+            padding: var(--spacing-md) 5%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 8px;  /* Reduced from var(--spacing-sm) */
+            margin-top: var(--spacing-sm);
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                transition: 0.3s ease;
+                padding: 50px 0;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .header-text {
+                margin-top: 20vh;
+            }
+
+            .newsletter {
+                width: 95%;
+                max-width: 350px;
+                padding: var(--spacing-sm);
+            }
+
+            .services-list {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-sm);
+            }
+
+            .service-image {
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 110px;
+            }
+
+            .join-button {
+                display: block;
+                margin: 15px auto;
+                max-width: 180px;
+                font-size: 0.9rem;
+                padding: 8px 20px;
+            }
+
+            .cta-button {
+                display: block;
+                margin: 15px auto;
+                max-width: 160px;
+                font-size: 0.85rem;
+                padding: 6px 16px;
+            }
+
+            .newsletter {
+                width: 90%;
+                max-width: 300px;
+            }
+
+            .newsletter h3 {
+                font-size: 1.3rem;
+            }
+
+            .newsletter p {
+                font-size: 0.85rem;
+            }
+
+            .newsletter input,
+            .newsletter button {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+
+            .social-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+
+            .services-list > div {
+                padding: var(--spacing-sm);
+            }
+
+            .service-image {
+                height: 140px;
+            }
+
+            #services h2 {
+                font-size: clamp(1.5rem, 3vw, 2.5rem);
+                margin-bottom: var(--spacing-md);
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="top-header">
+            <a href="index.html" aria-label="Wen Creatives Home">
+                <img src="Wen Creatives o Background copy.png" alt="Wen Creatives Logo" class="logo" width="140" height="auto">
+            </a>
+            
+            <nav aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <span class="hamburger" aria-label="Toggle menu">&#9776;</span>
+            </nav>
+        </div>
+        <div class="header-text">
+            <h1>Welcome to Wen Creatives</h1>
+            <p>We specialize in crafting cutting-edge websites and applications tailored to your business needs.</p>
+            <a href="classes.html" class="join-button">Join my classes</a>
+            <a href="#services" class="cta-button">Need A website?</a>
+            
+            <!-- Newsletter Section -->
+            <div class="newsletter">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for the latest updates and exclusive offers!</p>
+                <form id="newsletterForm" action="https://formspree.io/f/your-formspree-endpoint" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-list">
+            <div>
+                <img src="app.webp" alt="Web Design Services" class="service-image" width="100%" height="200">
+                <h3>Web Design</h3>
+                <p>We create visually stunning websites tailored to your audience.</p>
+            </div>
+            <div>
+                <img src="graph.webp" alt="Graphic Design Services" class="service-image" width="100%" height="200">
+                <h3>Graphic Design</h3>
+                <p>Enhance your website's visibility and drive organic traffic.</p>
+            </div>
+            <div>
+                <img src="brand.webp" alt="Brand Identity Services" class="service-image" width="100%" height="200">
+                <h3>Brand Identity</h3>
+                <p>Build a brand that resonates with your customers.</p>
+            </div>
+            <div>
+                <img src="Appdev.webp" alt="App Development Services" class="service-image" width="100%" height="200">
+                <h3>App Development</h3>
+                <p>Custom mobile and web apps to meet your business goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Wen Creatives. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/@wen_creatives" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our YouTube channel"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@wencreatives?lang=en" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our TikTok page"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        });
+
+        // Add scroll effect for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.top-header');
+            if (window.scrollY > 100) {
+                header.style.padding = '15px 5%';
+            } else {
+                header.style.padding = '20px 5%';
+            }
+        });
+
+        // Newsletter form handling
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.email.value;
+            fetch(this.action, {
+                method: 'POST',
+                body: JSON.stringify({ email: email }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Thank you for subscribing!');
+                    this.reset();
+                } else {
+                    alert('There was an error. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error. Please try again.');
+            });
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+
+        // Disable background scroll when mobile menu is open
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.body.style.overflow = document.querySelector('.nav-menu').classList.contains('active') ? 'hidden' : 'auto';
+        });
+    </script>
+</body>
+</html>
